@@ -27,7 +27,7 @@ class MoviesController extends Controller
         });
 
 
-        dump($peliculasPopulares);
+        /* dump($peliculasPopulares); */
 
         return view('dashboard',[
             'peliculasPopulares' => $peliculasPopulares,
@@ -64,7 +64,16 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+        $detallesPelicula = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=credits,videos,images&language=es')
+        ->json() ;
+
+        /* dump($detallesPelicula); */
+
+        return view('show',[
+            'detallesPelicula' => $detallesPelicula,
+           /*  'generos' => $generos, */
+        ]);
     }
 
     /**
