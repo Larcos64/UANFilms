@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,9 @@ Route::get('/dashboard', function () {
 Route::get('/show', function () {
     return view('show');
 })->middleware(['auth', 'verified'])->name('show');
+
+Route::get('/dashboard',[MoviesController::class, 'index'])->middleware(['auth', 'verified'])->name('movies.index');
+Route::get('/movies/{movies}',[MoviesController::class, 'show'])->middleware(['auth', 'verified'])->name('movies.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
