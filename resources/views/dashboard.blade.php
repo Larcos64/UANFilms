@@ -4,7 +4,10 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
+    <div class="flex items-center justify-center mt-5 ml-6">
+        <livewire:search-dropdown>
+    </div>
+    
     {{-- <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> --}}
             <div {{-- class="overflow-hidden bg-white shadow-sm sm:rounded-lg" --}} class="container px-4 pt-16 mx-auto">
