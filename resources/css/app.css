@@ -5,12 +5,14 @@
 .spinner{
 	position: absolute;
 }
+/* Libreria */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
  * {
 	 box-sizing: border-box;
 	 margin: 0;
 }
+/* Html Cuerpo */
  html, body {
 	 margin: 0;
 	 background: black;
@@ -18,6 +20,9 @@
 	 font-size: 14px;
 	 font-weight: 400;
 }
+
+/* Card of movie */
+
  .movie_card {
 	 position: relative;
 	 display: block;
@@ -113,6 +118,11 @@
 	 background-size: cover;
 	 border-radius: 11px;
 }
+
+/* FIN Movie card settings */
+
+/* Pantalla/movies changes */
+
  @media screen and (min-width: 768px) {
 	 .movie_header {
 		 width: 60%;
@@ -150,6 +160,7 @@
 		 background: linear-gradient(to top, #141413 50%, transparent 100%);
 		 display: inline-grid;
 	}
+	
 }
  #bright {
 	 box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
