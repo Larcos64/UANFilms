@@ -1,4 +1,11 @@
 <x-guest-layout>
+
+<!-- Enlace volver a login  -->
+<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" 
+        href="http://uanfilms.test/login">
+                {{ __('Back?') }}
+            </a>   
+            <!-- FIN Enlace volver Login-->
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
     </div>
@@ -9,6 +16,7 @@
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
 
+
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -17,9 +25,14 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
+            
+        
+         
+            <!-- Boton -->
             <x-primary-button>
                 {{ __('Email Password Reset Link') }}
             </x-primary-button>
         </div>
     </form>
 </x-guest-layout>
+<!-- FIN Boton. -->
