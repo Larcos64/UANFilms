@@ -22,7 +22,7 @@
         var_dump( $result );
         echo '<br>Este es mi comentario:';
         echo $result[0]['name'];
-        return $result;
+      /*   return $result; */
     }
 
     function guardarComentario( $comentario )
@@ -170,7 +170,7 @@
                         @endif
                     @endforeach
 <!--Actores end-->
-                <div class="movie_card" id="bright">
+                {{-- <div class="movie_card" id="bright">
                     <div class="info_section">
                       <div class="movie_header">
                         <img class="locandina" src="https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg"/>
@@ -193,7 +193,7 @@
                       </div>
                     </div>
                     <div class="blur_back bright_back"></div>
-                </div>
+                </div> --}}
 
                 
             </div>

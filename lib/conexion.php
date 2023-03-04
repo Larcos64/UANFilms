@@ -9,7 +9,7 @@ class Conexion
     private static $pdo = NULL;
     private static $result = NULL; 
        
-    public static function conectar($host = "localhost", $dbname="uanfilms", $usuario="root", $clave="sagitario16192103000") //RECORDAR CAMBIAR LA CLAVE POR LA DE SU MYSQL
+    public static function conectar($host = "localhost", $dbname="uanfilms", $usuario="root", $clave="") //RECORDAR CAMBIAR LA CLAVE POR LA DE SU MYSQL
     {      
         self::$host = $host;
         self::$dbname = $dbname;
