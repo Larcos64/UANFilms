@@ -18,7 +18,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" class="text-blue-600 font-bold" />
+            <x-input-label for="password" :value="__('Password')" class="text-blue-600 " />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -30,7 +30,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" class="text-blue-600 font-bold" />
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')"  />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -44,7 +44,7 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4 bg-green-400 hover:bg-green-900 font-bold ">
+            <x-primary-button class="ml-4 bg-green-400  hover:bg-green-800">
                 {{ __('Register') }}
             </x-primary-button>
         </div>
