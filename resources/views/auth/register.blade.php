@@ -18,7 +18,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" class="text-blue-600 " />
+            <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block w-full mt-1"
                             type="password"
@@ -44,7 +44,7 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4 bg-green-400 hover:bg-green-800">
+            <x-primary-button class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
         </div>
