@@ -4,86 +4,11 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-<!--Conexion con BD y reseñas-->
-<?php 
-    // Para ver errores de Migracion
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
-    include_once '../lib/Conexion.php';
-    Conexion::conectar();
-
-    function getPeliculas()
-    {
-        // seleccionar de TABLA
-        $sql = "SELECT * FROM users ";
-        $result = Conexion::obtener( $sql );
-        var_dump( $result );
-        echo '<br>Este es mi comentario:';
-        echo $result[0]['name'];
-        return $result;
-    }
-
-    function guardarComentario( $comentario )
-    {
-
-        $sql = "INSERT INTO users (cod) VALUES( '1' ) ";
-        //$result = Conexion::ejecutar( $sql ); // ejecutar funciona para INSERT, UPDATE
-        var_dump( $comentario );
-        return $comentario;
-    }
-
-    function get_array($array, $index = 'assoc') {
-        $output = NULL;
-        if ($index === 'assoc') {
-            foreach ($array as $key => $item) {
-                if (!is_int($key)) {
-                    $output[$key] = $item;
-                }
-            }
-            return $output;
-        } elseif ($index === 'index') {
-            foreach ($array as $key => $item) {
-                if (is_int($key)) {
-                    $output[$key] = $item;
-                }
-            }
-            return $output;
-        } else {
-            return $array;
-        }
-    }
-    
-
-    function show( $obj )
-    {
-        echo '<pre style="color:¨red;">';
-        echo $obj;
-        echo '</pre>';
-    }
-
-    $misPeliculas = getPeliculas();
-    show($misPeliculas);
-   echo '<pre>';
-        echo $misPeliculas;
-        echo '</pre>';
-
-        print_r( $misPeliculas, true );
-        
-        show($_REQUEST);
-    var_dump($_REQUEST);
-    if( $_REQUEST['accion'] == "accionGuardar")
-    {
-        guardarComentario($_REQUEST['mensajeJorge'] );
-    }
-    ?>
-        
     <div class="border-b border-gray-700 movie-info">
-<!-- Fin Conexion Guardar y imprimir -->
 
         
-<!--Datos Pelicula-->
+
         <div class="container flex flex-col px-4 py-16 mx-auto md:flex-row">
             <div class="flex-none">
                 <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="w-64 lg:w-96" style="width: 24rem" id="bright">
@@ -135,11 +60,6 @@
                             <span class="ml-2">Ver Trailer</span>
                             
                         </a>
-                        <!-- Espacio Reseñas -->
-                        <h1>CUADRO RESEÑAS</h1>
-
-
-                        <!-- Fin Reseñas -->
                     </div>
                 @endif
                 
@@ -147,7 +67,7 @@
         </div>
     </div>
 
-<!--Actores-->
+
     <div class="border-b border-gray-800 movie-cast">
         <div class="container px-4 py-16 mx-auto">
             <h2 class="text-4xl font-semibold">Actores</h2>
@@ -169,7 +89,7 @@
                             </div>
                         @endif
                     @endforeach
-<!--Actores end-->
+
                 <div class="movie_card" id="bright">
                     <div class="info_section">
                       <div class="movie_header">
@@ -200,19 +120,6 @@
             
         </div>
     </div>
-    
-    <form enctype="multipart/form-data">
-            <!-- Espacio Reseñas Informacion -->
-            <h2>Por favor Agradecemos que pueda mencionarnos que le parece esta pelicula a continuacion podra dejar su reseña de la misma, Gracias!</h2>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> </label>
-            <textarea name="coments" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 
-            focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-            placeholder="Write your thoughts here...">
-            </textarea>       
-            <input type="hidden" value="accionGuardar" name="accion">
-            <button type="submit">Guardar</button>
-            </form>
-<!-- Fin espacio reseñas -->
 
     <div class="border-b border-gray-800 movie-cast">
         <div class="container px-4 py-16 mx-auto">
