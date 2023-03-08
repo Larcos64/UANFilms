@@ -277,7 +277,7 @@
 
                 
                   
-                  {{-- <div class="movie_card" id="tomb">
+                  <div class="movie_card" id="tomb">
                     <div class="info_section">
                       <div class="movie_header">
                         <img class="locandina" src="https://mr.comingsoon.it/imgdb/locandine/235x336/53750.jpg"/>
@@ -326,7 +326,7 @@
                     </div>
                     <div class="blur_back ave_back"></div>
                   </div>
- --}}
+
                 
             </div>
     

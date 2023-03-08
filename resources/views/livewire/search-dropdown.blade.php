@@ -8,7 +8,7 @@
         </div>
 
 
-       {{--  <div wire:loading class="top-0 right-0 mt-4 mr-6 spinner"></div> --}}
+        <div wire:loading class="top-0 right-0 mt-4 mr-6 spinner"></div>
         @if (strlen($search >= 2))
             <div class="absolute w-64 mt-4 text-sm bg-gray-800 rounded">
                 @if ($searchResults->count() > 0)
