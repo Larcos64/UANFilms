@@ -46,20 +46,28 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="flex" style="justify-content: space-between;">
+                    @if (count($detallesPelicula['videos']['results']) > 0)
+                        <div class="mt-12">
+                            <a 
+                                Target="_blank"
+                                href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
+                                class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                </svg>
+                                <span class="ml-2">Ver Trailer</span>
+                            </a>
+                        </div>
+                    @endif
+                        <div class="">
+                            <div class="max-w-2xl mx-auto mr-15">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your messagedddddsdafsdfsadfasdfsadfasdf</label>
+                                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                            </div>
+                        </div>
+                </div>
                 
-                @if (count($detallesPelicula['videos']['results']) > 0)
-                    <div class="mt-12">
-                        <a 
-                            Target="_blank"
-                            href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
-                            class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                            </svg>
-                            <span class="ml-2">Ver Trailer</span>
-                        </a>
-                    </div>
-                @endif
                 
             </div>
         </div>
@@ -87,32 +95,7 @@
                             </div>
                         @endif
                     @endforeach
-
-                <div class="movie_card" id="bright">
-                    <div class="info_section">
-                      <div class="movie_header">
-                        <img class="locandina" src="https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg"/>
-                        <h1>Bright</h1>
-                        <h4>2017, David Ayer</h4>
-                        <span class="minutes">117 min</span>
-                        <p class="type">Action, Crime, Fantasy</p>
-                      </div>
-                      <div class="movie_desc">
-                        <p class="text">
-                          Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. 
-                        </p>
-                      </div>
-                      <div class="movie_social">
-                        <ul>
-                          <li><i class="material-icons">share</i></li>
-                          <li><i class="material-icons"></i></li>
-                          <li><i class="material-icons">chat_bubble</i></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="blur_back bright_back"></div>
-                </div>
-
+                            
                 
             </div>
             
