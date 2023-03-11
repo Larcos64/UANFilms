@@ -41,11 +41,11 @@
 
             <a class="text-sm font-bold underline rounded-md text-violet-600 hover:text-violet-900 font focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
         <div class="flex items-center justify-end mt-4" >
-                {{ __('Already registered?') }}
+                {{ __('Ya estas registrado?') }}
             </a>
 
             <x-primary-button class="ml-4">
-                {{ __('Register') }}
+                {{ __('Registrarme') }}
             </x-primary-button>
         </div>
     </form>
