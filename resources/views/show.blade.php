@@ -44,11 +44,8 @@
                                 </div>
                             @endif
                         @endforeach
-                    </div>
-                </div>
-                <div class="flex" style="justify-content: space-between;">
-                    @if (count($detallesPelicula['videos']['results']) > 0)
-                        <div class="mt-12">
+                        @if (count($detallesPelicula['videos']['results']) > 0)
+                        <div class="ml-12">
                             <a 
                                 Target="_blank"
                                 href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
@@ -60,12 +57,33 @@
                             </a>
                         </div>
                     @endif
-                        <div class="">
-                            <div class="max-w-2xl mx-auto mr-15">
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your messagedddddsdafsdfsadfasdfsadfasdf</label>
-                                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-                            </div>
+                    </div>
+                </div>
+                <div class="flex" style="align-items: end;">
+                    {{-- @if (count($detallesPelicula['videos']['results']) > 0)
+                        <div class="mt-12">
+                            <a 
+                                Target="_blank"
+                                href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
+                                class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                </svg>
+                                <span class="ml-2">Ver Trailer</span>
+                            </a>
                         </div>
+                    @endif --}}
+                        <div class="mt-12">
+                            {{-- <div class="max-w-2xl mx-auto mr-15"> --}}
+                                <h4 class="mb-4 font-semibold text-white">Reseña</h4>
+                                <label for="message" class="mt-8 mb-2 font-medium text-gray-300 ">Dejanos tu reseña acerca de esta pelicula:</label>
+                                    <textarea id="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
+                            {{-- </div> --}}
+                        </div>
+                        <div class="mt-15">
+                            <button class="items-center px-3 py-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">Enviar Reseña</button>
+                        </div>
+                        
                 </div>
                 
                 
