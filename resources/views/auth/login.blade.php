@@ -122,19 +122,19 @@
                     <div class="bg-gray-900 overlay">
                         <div class="overlay-panel overlay-left">
                             <a href="/">
-                                <x-application-logo class="w-20 h-20 text-orange-500 fill-current" />
+                                <x-application-logo class="w-20 h-20 mb-5 mt-5 text-orange-500 fill-current" />
                             </a>
-                            <h1 class="text-3xl font-bold">Ingresar</h1>
+                            <h1 class="text-3xl font-bold mt-10">Ingresar</h1>
                             <p>Acceda aquí si ya tiene una cuenta </p>
-                            <button class="mt-5 ghost" id="signIn">Iniciar sesión</button>
+                            <button class="mt-5 ghost border-orange-500 " id="signIn">Iniciar sesión</button>
                         </div>
                         <div class="overlay-panel overlay-right">
                             <a href="/">
                                 <x-application-logo class="w-20 h-20 text-orange-500 fill-current" />
                             </a>
-                            <h1 class="text-3xl font-bold">Crear cuenta!</h1>
+                            <h1 class="text-3xl font-bold mt-10">Crear cuenta!</h1>
                             <p>Regístrate si aún no tienes cuenta ... </p>
-                            <button class="ghost" id="signUp">Registrarse</button>
+                            <button class="mt-5 ghost border-orange-500" id="signUp">Registrarse</button>
                         </div>
                     </div>
                 </div>
