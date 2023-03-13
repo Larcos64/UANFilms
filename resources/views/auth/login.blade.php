@@ -119,16 +119,22 @@
                     </form>
                 </div>
                 <div class="overlay-container">
-                    <div class="bg-gray-800 overlay">
+                    <div class="bg-gray-900 overlay">
                         <div class="overlay-panel overlay-left">
-                            <h1 class="text-3xl font-bold">Log in</h1>
-                            <p>Sign in here if you already have an account </p>
-                            <button class="mt-5 ghost" id="signIn">Sign In</button>
+                            <a href="/">
+                                <x-application-logo class="w-20 h-20 text-orange-500 fill-current" />
+                            </a>
+                            <h1 class="text-3xl font-bold">Ingresar</h1>
+                            <p>Acceda aquí si ya tiene una cuenta </p>
+                            <button class="mt-5 ghost" id="signIn">Iniciar sesión</button>
                         </div>
                         <div class="overlay-panel overlay-right">
-                            <h1>Create, Account!</h1>
-                            <p>Sign up if you still don't have an account ... </p>
-                            <button class="ghost" id="signUp">Sign Up</button>
+                            <a href="/">
+                                <x-application-logo class="w-20 h-20 text-orange-500 fill-current" />
+                            </a>
+                            <h1 class="text-3xl font-bold">Crear cuenta!</h1>
+                            <p>Regístrate si aún no tienes cuenta ... </p>
+                            <button class="ghost" id="signUp">Registrarse</button>
                         </div>
                     </div>
                 </div>
