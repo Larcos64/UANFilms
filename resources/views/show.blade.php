@@ -81,7 +81,7 @@
                             {{-- </div> --}}
                         </div>
                         <div class="mt-15">
-                            <button class="items-center px-3 py-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">Enviar Reseña</button>
+                            <button class="items-center px-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="padding-top: 5px;padding-bottom: 5px;">Enviar</button>
                         </div>
                         
                 </div>

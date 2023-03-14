@@ -52,36 +52,44 @@
         {{-- <div class="ocean">
             <div class="wave"></div>
             <div class="wave"></div>
-        </div> --}}
-        <!-- Log In Form Section -->
+        </div> 
+         --}}
 
         
             <div class="container1 justify-content: center;
             align-items: center" id="container">
                 <div class="form-container1 sign-up-container">
-                    <form action="#">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <h1>Registro</h1>
-                        <div class="social-container1">
-                            <a href="https://Github.com/YasinDehfuli" target="_blank" class="social"><i class="fab fa-github"></i></a>
-                            <a href="https://Codepen.io/YasinDehfuli" target="_blank" class="social"><i class="fab fa-codepen"></i></a>
-                            <a href="mailto:Ydehfuli@gmail.com" target="_blank" class="social"><i class="fab fa-google"></i></a>
+                        <div class=" social-container1">
+                            <a href="#" target="_blank" class="social"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" class="social"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="social"><i class="fab fa-google"></i></a>
                         </div>
                         <span>O usa tu Email para registrate</span>
                         <label>
-                        {{--     <input type="text" placeholder="Name"/> --}}
-                            
-                            <x-text-input id="email" placeholder="Nombre" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                            <x-text-input id="name" placeholder="Nombre"  class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </label>
+                        <label>
+                            <x-text-input id="email" placeholder="Email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </label>
                         <label>
-                            <input type="email" placeholder="Email"/>
+                            <x-text-input id="password" placeholder="Contraseña" class="block w-full mt-1"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </label>
                         <label>
-                            <input type="password" placeholder="Password"/>
-                        </label>
-                        <label>
-                            <input type="password" placeholder="Password"/>
+                            <x-text-input id="password_confirmation" placeholder="Confirmar Contraseña"  class="block w-full mt-1"
+                            type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
+
+                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </label>
                         <button style="margin-top: 9px">Registrame</button>
                     </form>
@@ -91,15 +99,15 @@
                         @csrf
                         <h1>Ingresa</h1>
                         <div class="social-container1">
-                            <a href="https://Github.com/YasinDehfuli" target="_blank" class="social"><i class="fab fa-github"></i></a>
-                            <a href="https://Codepen.io/YasinDehfuli" target="_blank" class="social"><i class="fab fa-codepen"></i></a>
-                            <a href="mailto:Ydehfuli@gmail.com" target="_blank" class="social"><i class="fab fa-google"></i></a>
+                            <a href="#" target="_blank" class="social"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" class="social"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="social"><i class="fab fa-google"></i></a>
                         </div>
                         <span> O ingresa usando tu dirección de correo</span>
                         <label>
                             {{-- <input type="email" placeholder="Email"/> --}}
                         
-            <x-text-input id="email" placeholder="Correo" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-text-input id="email" placeholder="Correo" class="block w-full mt-1 " type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </label>
                         <label>
@@ -122,19 +130,19 @@
                     <div class="bg-gray-900 overlay">
                         <div class="overlay-panel overlay-left">
                             <a href="/">
-                                <x-application-logo class="w-20 h-20 mb-5 mt-5 text-orange-500 fill-current" />
+                                <x-application-logo class="w-20 h-20 mt-5 mb-5 text-orange-500 fill-current" />
                             </a>
-                            <h1 class="text-3xl font-bold mt-10">Ingresar</h1>
-                            <p>Acceda aquí si ya tiene una cuenta </p>
-                            <button class="mt-5 ghost border-orange-500 " id="signIn">Iniciar sesión</button>
+                            <h1 class="mt-10 text-3xl font-bold">Ingresar</h1>
+                            <p style="margin: 20px 0 30px">Acceda aquí si ya tiene una cuenta </p>
+                            <button class="mt-5 border-orange-500 ghost " id="signIn">Iniciar sesión</button>
                         </div>
                         <div class="overlay-panel overlay-right">
                             <a href="/">
                                 <x-application-logo class="w-20 h-20 text-orange-500 fill-current" />
                             </a>
-                            <h1 class="text-3xl font-bold mt-10">Crear cuenta!</h1>
-                            <p>Regístrate si aún no tienes cuenta ... </p>
-                            <button class="mt-5 ghost border-orange-500" id="signUp">Registrarse</button>
+                            <h1 class="mt-10 text-3xl font-bold">Crear cuenta!</h1>
+                            <p style="margin: 20px 0 30px">Regístrate si aún no tienes cuenta ... </p>
+                            <button class="mt-5 border-orange-500 ghost" id="signUp">Registrarse</button>
                         </div>
                     </div>
                 </div>
@@ -146,6 +154,7 @@
 
             
 </x-guest-layout>
+<script src="https://kit.fontawesome.com/0e637fdd52.js" crossorigin="anonymous"></script>
 <script >
 
 const signUpButton = document.getElementById('signUp');
