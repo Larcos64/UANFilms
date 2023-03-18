@@ -4,7 +4,8 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
+    <p>{{Auth::user()->id }}</p>
+    <p>{{$detallesPelicula['id']}}</p>
     <div class="border-b border-gray-700 movie-info">
 
         
@@ -59,6 +60,7 @@
                     @endif
                     </div>
                 </div>
+                
                 <div class="flex" style="align-items: end;">
                     {{-- @if (count($detallesPelicula['videos']['results']) > 0)
                         <div class="mt-12">
