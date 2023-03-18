@@ -29,6 +29,7 @@ Route::get('/show', function () {
 
 Route::get('/dashboard',[MoviesController::class, 'index'])->middleware(['auth', 'verified'])->name('movies.index');
 Route::get('/movies/{movies}',[MoviesController::class, 'show'])->middleware(['auth', 'verified'])->name('movies.show');
+Route::match(['get', 'post'], '/reseña', [App\Http\Controllers\ReseñasController::class, 'message'])->name('message');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

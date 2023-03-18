@@ -46,12 +46,12 @@
                             @endif
                         @endforeach
                         @if (count($detallesPelicula['videos']['results']) > 0)
-                        <div class="ml-12">
+                        <div class="ml-12 ">
                             <a 
                                 Target="_blank"
                                 href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
-                                class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
+                                class="inline-flex items-center px-3 py-2 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="margin-top: 0px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current ">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
                                 </svg>
                                 <span class="ml-2">Ver Trailer</span>
@@ -60,33 +60,38 @@
                     @endif
                     </div>
                 </div>
-                
-                <div class="flex" style="align-items: end;">
-                    {{-- @if (count($detallesPelicula['videos']['results']) > 0)
-                        <div class="mt-12">
-                            <a 
-                                Target="_blank"
-                                href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
-                                class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                </svg>
-                                <span class="ml-2">Ver Trailer</span>
-                            </a>
-                        </div>
-                    @endif --}}
-                        <div class="mt-12">
-                            {{-- <div class="max-w-2xl mx-auto mr-15"> --}}
-                                <h4 class="mb-4 font-semibold text-white">Reseña</h4>
-                                <label for="message" class="mt-8 mb-2 font-medium text-gray-300 ">Dejanos tu reseña acerca de esta pelicula:</label>
-                                    <textarea id="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
-                            {{-- </div> --}}
-                        </div>
-                        <div class="mt-15">
-                            <button class="items-center px-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="padding-top: 5px;padding-bottom: 5px;">Enviar</button>
-                        </div>
+                <form id="send_message"  method="POST">
+                @csrf
+                    <div class="flex" style="align-items: end;">
+                    
                         
-                </div>
+                        {{-- @if (count($detallesPelicula['videos']['results']) > 0)
+                            <div class="mt-12">
+                                <a 
+                                    Target="_blank"
+                                    href="https://youtube.com/watch?v={{ $detallesPelicula['videos']['results'][0]['key']}}"
+                                    class="inline-flex items-center px-3 py-3 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-current">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                    </svg>
+                                    <span class="ml-2">Ver Trailer</span>
+                                </a>
+                            </div>
+                        @endif --}}
+
+                            <div class="mt-12">
+                                {{-- <div class="max-w-2xl mx-auto mr-15"> --}}
+                                    <h4 class="mb-4 font-semibold text-white">Reseña</h4>
+                                    <label for="message" class="mt-8 mb-2 font-medium text-gray-300 ">Dejanos tu reseña acerca de esta pelicula:</label>
+                                        <textarea id="message"  name="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
+                                {{-- </div> --}}
+                            </div>
+                            <div class="mt-15">
+                                <button  type="submit" class="items-center px-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="padding-top: 5px;padding-bottom: 5px;">Enviar</button>
+                            </div>
+                    
+                    </div>
+                </form> 
                 
                 
             </div>
@@ -116,7 +121,7 @@
                         @endif
                     @endforeach
                             
-                
+                <p id="hj">hola</p>
             </div>
             
         </div>
@@ -144,7 +149,45 @@
     </div>
     
 </x-app-layout>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    console.log('hola prueba');
+    /* const for = document.querySelector('#send_message'); */
+    const ter = document.getElementById('hj').value;
+    console.log(ter);
+
+    $('#send_message').on('submit', function(e) {
+                event.preventDefault();
+                var form = $(this);
+                    var $thisForm = $('#send_message');
+                    var formData = new FormData(this);
+                    var url = "{{ route('message')}}";
+                            let timerInterval;
+                            Swal.fire({
+                                title: '¿Quieres guardar los cambios?',
+                                showDenyButton: true,
+                                showCancelButton: true,
+                                confirmButtonText: 'Guardar',
+                                denyButtonText: `No Guardar`,
+                                }).then((result) => {
+                                if (result.isConfirmed) {
+                                    Swal.fire('Guardados!', '', 'success')
+                                    $.ajax({
+                                    headers: {
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                    type: "POST",
+                                    url: url,
+                                    data: formData,
+                                    processData: false,
+                                    contentType: false,
+                                    dataType:'json',
+                                }).done(function(respuesta) {
+                         
+                                    console.log(respuesta);
+                                })
+                                } else if (result.isDenied) {
+                                    Swal.fire('Los cambios no se guardaran', '', 'info')
+                                }
+                            })      
+            });
 </script>
