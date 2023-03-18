@@ -4,8 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <p>{{Auth::user()->id }}</p>
-    <p>{{$detallesPelicula['id']}}</p>
+   
     <div class="border-b border-gray-700 movie-info">
 
         
@@ -86,6 +85,8 @@
                                         <textarea id="message"  name="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
                                 {{-- </div> --}}
                             </div>
+                            <input name="user_id" value="{{Auth::user()->id }}" hidden>
+                            <input name="pelicula_id" value="{{$detallesPelicula['id']}}" hidden>
                             <div class="mt-15">
                                 <button  type="submit" class="items-center px-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="padding-top: 5px;padding-bottom: 5px;">Enviar</button>
                             </div>
@@ -163,14 +164,14 @@
                     var url = "{{ route('message')}}";
                             let timerInterval;
                             Swal.fire({
-                                title: '¿Quieres guardar los cambios?',
+                                title: '¿Quieres guardar tu reseña?',
                                 showDenyButton: true,
                                 showCancelButton: true,
                                 confirmButtonText: 'Guardar',
                                 denyButtonText: `No Guardar`,
                                 }).then((result) => {
                                 if (result.isConfirmed) {
-                                    Swal.fire('Guardados!', '', 'success')
+                                    Swal.fire('Reseña Envianda!', '', 'success')
                                     $.ajax({
                                     headers: {
                                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -186,7 +187,7 @@
                                     console.log(respuesta);
                                 })
                                 } else if (result.isDenied) {
-                                    Swal.fire('Los cambios no se guardaran', '', 'info')
+                                    Swal.fire('La reseña no se guardara', '', 'info')
                                 }
                             })      
             });

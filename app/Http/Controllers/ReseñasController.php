@@ -9,30 +9,22 @@ class ReseñasController extends Controller
 {
     public function message(Request $request)
     {
-        dd('hola');
-
-        
-        try {
-			
-            $user_id = Auth()->user()->id;
+        try {  
             if($request->ajax()){
                 
-                $message_active = $request->message_active;
                 $mensaje = $request->message;
-                if ($message_active == 'true') {
-                    $message = 1;
-                }else{
-                    $message = 0;
-                }
-                $registro_message = new Reseña();
-                $registro_message->user_id = $user_id;
-                $registro_message->message_active = $message;
-                $registro_message->message = $mensaje;
-                $registro_message->save();
+                $user_id = $request->user_id;
+                $pelicula_id = $request->pelicula_id;
+                
+                $registro_reseña = new Reseña();
+                $registro_reseña->user_id = $user_id;
+                $registro_reseña->pelicula_id = $pelicula_id;
+                $registro_reseña->resena = $mensaje;
+                $registro_reseña->save();
             }
 			return response()->json([
 				'status' => 200,
-				'info' => $message,
+				'info' => $mensaje,
                 'mensaje' => $mensaje,
 			]);
 		} catch (\Exception $er) {

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable();
             $table->bigInteger('pelicula_id')->nullable();
-            $table->text('reseña')->nullable();
+            $table->text('resena')->nullable();
             $table->timestamps();
         });
     }

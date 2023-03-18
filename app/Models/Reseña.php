@@ -12,6 +12,6 @@ class Reseña extends Model
     protected $fillable=[
         'user_id',
         'pelicula_id',
-        'reseña',
+        'resena',
     ];
 }
