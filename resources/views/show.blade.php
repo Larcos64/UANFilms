@@ -85,7 +85,7 @@
                                         <textarea id="message"  name="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
                                 {{-- </div> --}}
                             </div>
-                            <input name="user_id" value="{{Auth::user()->id }}" hidden>
+                            <input id="user_id" name="user_id" value="{{Auth::user()->id }}" hidden>
                             <input name="pelicula_id" value="{{$detallesPelicula['id']}}" hidden>
                             <div class="mt-15">
                                 <button  type="submit" class="items-center px-3 mb-2 ml-4 font-semibold text-gray-900 transition duration-150 ease-in-out bg-orange-500 rounded hover:bg-orange-600" style="padding-top: 5px;padding-bottom: 5px;">Enviar</button>
@@ -122,7 +122,6 @@
                         @endif
                     @endforeach
                             
-                <p id="hj">hola</p>
             </div>
             
         </div>
@@ -143,21 +142,23 @@
                         @endif
                     @endforeach
 
-
+                            <p id="ejemplo" >hola</p>
             </div>
             
         </div>
     </div>
     
 </x-app-layout>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+<script src="{{ asset('../js/login.js') }}"></script>
 <script>
-    /* const for = document.querySelector('#send_message'); */
-    const ter = document.getElementById('hj').value;
-    console.log(ter);
-
+   /* const for = document.querySelector('#message'); */
+   const formulario = document.querySelector('#send_message');
+    
     $('#send_message').on('submit', function(e) {
                 event.preventDefault();
+                const ejemplo = document.getElementById('#message');
+                const mensaje = document.querySelector('#message').value;
                 var form = $(this);
                     var $thisForm = $('#send_message');
                     var formData = new FormData(this);
@@ -165,13 +166,22 @@
                             let timerInterval;
                             Swal.fire({
                                 title: '¿Quieres guardar tu reseña?',
+                                html: `<strong>Tu Reseña es:</strong>
+                                <br>
+                                ${mensaje}`,
                                 showDenyButton: true,
                                 showCancelButton: true,
                                 confirmButtonText: 'Guardar',
                                 denyButtonText: `No Guardar`,
                                 }).then((result) => {
                                 if (result.isConfirmed) {
-                                    Swal.fire('Reseña Envianda!', '', 'success')
+                                    Swal.fire({
+                                        title: 'Reseña Envianda',
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    }/* 'Reseña Envianda!', '', 'success','2000' */);
                                     $.ajax({
                                     headers: {
                                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -183,8 +193,9 @@
                                     contentType: false,
                                     dataType:'json',
                                 }).done(function(respuesta) {
-                         
                                     console.log(respuesta);
+                                    
+                                    formulario.reset();
                                 })
                                 } else if (result.isDenied) {
                                     Swal.fire('La reseña no se guardara', '', 'info')

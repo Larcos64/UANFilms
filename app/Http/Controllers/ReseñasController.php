@@ -13,13 +13,14 @@ class ReseñasController extends Controller
             if($request->ajax()){
                 
                 $mensaje = $request->message;
+                $mensaje_minus = strtolower($mensaje);
                 $user_id = $request->user_id;
                 $pelicula_id = $request->pelicula_id;
                 
                 $registro_reseña = new Reseña();
                 $registro_reseña->user_id = $user_id;
                 $registro_reseña->pelicula_id = $pelicula_id;
-                $registro_reseña->resena = $mensaje;
+                $registro_reseña->resena = $mensaje_minus;
                 $registro_reseña->save();
             }
 			return response()->json([
