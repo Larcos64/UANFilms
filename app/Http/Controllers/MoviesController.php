@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reseña;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -70,8 +71,14 @@ class MoviesController extends Controller
 
         /* dump($detallesPelicula); */
 
+        $reseñas = Reseña::where('pelicula_id',$id)->get();
+        
+
+
+
         return view('show',[
             'detallesPelicula' => $detallesPelicula,
+            'reseñas' => $reseñas,
            /*  'generos' => $generos, */
         ]);
     }

@@ -459,3 +459,6 @@ button.ghost {
     transform: translateY(20%);
 }
 
+#client-testimonial-carousel {
+    min-height: 200px;
+}

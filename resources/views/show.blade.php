@@ -99,7 +99,96 @@
         </div>
     </div>
 
+    <div class="border-b border-gray-800 movie-cast">
+        <div class="container px-4 py-16 mx-auto">
+            <h2 class="text-4xl font-semibold">Reseñas</h2>
+            <div>
+               {{--  <head>
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                  </head> --}}
+                  
+                  <div class="pt-5 pb-5 col-lg-10 offset-lg-1 bg-dark text-light">
+                    <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
+                      <div class="carousel-inner" role="listbox">
+                        <div class="p-4 text-center carousel-item active">
+                          <blockquote class="text-center blockquote">
+                            <p class="mb-0"><i class="fa fa-quote-left"></i> Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.
+                            </p>
+                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+                            <!-- Client review stars -->
+                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                            <p class="client-review-stars">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star-half-alt"></i>
+                              <i class="far fa-star"></i>
+                            </p>
+                          </blockquote>
+                        </div>
+                        <div class="p-4 text-center carousel-item">
+                          <blockquote class="text-center blockquote">
+                            <p class="mb-0"><i class="fa fa-quote-left"></i> Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.
+                            </p>
+                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+                            <!-- Client review stars -->
+                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                            <p class="client-review-stars">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </p>
+                          </blockquote>
+                        </div>
+                        <div class="p-4 text-center carousel-item">
+                          <blockquote class="text-center blockquote">
+                            <p class="mb-0"><i class="fa fa-quote-left"></i> A person who never made a mistake never tried anything new.
+                            </p>
+                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+                            <!-- Client review stars -->
+                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                            <p class="client-review-stars">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </p>
+                          </blockquote>
+                        </div>
+                      </div>
+                      <ol class="carousel-indicators">
+                        <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
+                        <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
+                      </ol>
+                    </div>
+                  </div>
+                  {{--   @foreach ( $detallesPelicula['credits']['cast'] as $cast )
+                    @if ($loop->index < 5)
+                            <div class="mt-8">
+                                <a href="#">
+                                    <img src="{{'https://image.tmdb.org/t/p/w500/'.$cast['profile_path']}}"alt="" class="transition duration-150 ease-in-out hover:opacity-70">
+                                </a>
+                            
+                                <div class="mt-2">
+                                    <a href="#" class="mt-2 text-lg hover:text-gray-300">{{$cast['name']}}</a>
+                                    <div class="flex items-center text-sm text-gray-300">
+                                        <span>{{$cast['character']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach --}}
+                            
+            </div>
+            
+        </div>
+    </div>
 
+    
     <div class="border-b border-gray-800 movie-cast">
         <div class="container px-4 py-16 mx-auto">
             <h2 class="text-4xl font-semibold">Actores</h2>
@@ -141,8 +230,6 @@
                             </div>
                         @endif
                     @endforeach
-
-                            <p id="ejemplo" >hola</p>
             </div>
             
         </div>
@@ -151,6 +238,7 @@
 </x-app-layout>
 {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 <script src="{{ asset('../js/login.js') }}"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
    /* const for = document.querySelector('#message'); */
    const formulario = document.querySelector('#send_message');
