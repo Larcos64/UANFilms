@@ -102,12 +102,70 @@
     <div class="border-b border-gray-800 movie-cast">
         <div class="container px-4 py-16 mx-auto">
             <h2 class="mb-4 text-4xl font-semibold">Reseñas</h2>
-            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
 <div class="h-auto sliderAx">
+
+
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+             <!-- Item 1 -->
+            <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+                <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
+
+            </div>
+
+            <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+                <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
+
+            </div>
+            <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+                <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
+
+            </div>
+
+            {{-- @foreach ($reseñas as $reseña)
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <p class="mb-1 text-3xl text-center text-gray-300" ><i class="fa fa-quote-left"></i> {{$reseña['resena']}}   <i class="fa fa-quote-right"></i></p>
+                    <p class="mb-2 text-sm font-bold text-center text-gray-400 ">{{$reseña['user_id']}}</p>
+                    <p class="text-2xl text-center text-gray-300 client-review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </p>
+                </div>
+            @endforeach --}}
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
     
-    <div id="slider-1" class="container mx-auto">
+
+    
+    {{-- <div id="slider-1" class="container mx-auto">
         
         <div class="object-fill h-auto px-10 py-12 text-white bg-center bg-cover" >
             @foreach ($reseñas as $reseña)
@@ -131,11 +189,11 @@
     </div>
     <div  class="flex justify-between w-12 pb-2 mx-auto">
         <button id="sButton1" onclick="sliderButton1()" class="w-4 pb-2 bg-orange-400 border-none rounded-full" ></button>
-        {{-- <button id="sButton2" onclick="sliderButton2() " class="w-4 p-2 bg-orange-400 border-none rounded-full "></button> --}}
+        <button id="sButton2" onclick="sliderButton2() " class="w-4 p-2 bg-orange-400 border-none rounded-full "></button>
     </div>
     @endforeach
         </div>
-    </div>
+    </div> --}}
 
     
     <div class="border-b border-gray-800 movie-cast">
@@ -190,6 +248,9 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/0e637fdd52.js" crossorigin="anonymous"></script>
 <script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
    /* const for = document.querySelector('#message'); */
    const formulario = document.querySelector('#send_message');
     
