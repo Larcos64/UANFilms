@@ -82,7 +82,7 @@
                                 {{-- <div class="max-w-2xl mx-auto mr-15"> --}}
                                     <h4 class="mb-4 font-semibold text-white">Reseña</h4>
                                     <label for="message" class="mt-8 mb-2 font-medium text-gray-300 ">Dejanos tu reseña acerca de esta pelicula:</label>
-                                        <textarea id="message"  name="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
+                                        <textarea id="message"  name="message" rows="4" class="mt-3 p-2.5 w-full text-sm text-gray-900 bg-gray-700 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu Reseña..."></textarea>
                                 {{-- </div> --}}
                             </div>
                             <input id="user_id" name="user_id" value="{{Auth::user()->id }}" hidden>
@@ -101,90 +101,39 @@
 
     <div class="border-b border-gray-800 movie-cast">
         <div class="container px-4 py-16 mx-auto">
-            <h2 class="text-4xl font-semibold">Reseñas</h2>
-            <div>
-               {{--  <head>
-                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                  </head> --}}
-                  
-                  <div class="pt-5 pb-5 col-lg-10 offset-lg-1 bg-dark text-light">
-                    <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
-                      <div class="carousel-inner" role="listbox">
-                        <div class="p-4 text-center carousel-item active">
-                          <blockquote class="text-center blockquote">
-                            <p class="mb-0"><i class="fa fa-quote-left"></i> Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.
-                            </p>
-                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
-                            <!-- Client review stars -->
-                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                            <p class="client-review-stars">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star-half-alt"></i>
-                              <i class="far fa-star"></i>
-                            </p>
-                          </blockquote>
-                        </div>
-                        <div class="p-4 text-center carousel-item">
-                          <blockquote class="text-center blockquote">
-                            <p class="mb-0"><i class="fa fa-quote-left"></i> Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.
-                            </p>
-                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
-                            <!-- Client review stars -->
-                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                            <p class="client-review-stars">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                            </p>
-                          </blockquote>
-                        </div>
-                        <div class="p-4 text-center carousel-item">
-                          <blockquote class="text-center blockquote">
-                            <p class="mb-0"><i class="fa fa-quote-left"></i> A person who never made a mistake never tried anything new.
-                            </p>
-                            <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
-                            <!-- Client review stars -->
-                            <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                            <p class="client-review-stars">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                            </p>
-                          </blockquote>
-                        </div>
-                      </div>
-                      <ol class="carousel-indicators">
-                        <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
-                        <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
-                      </ol>
-                    </div>
-                  </div>
-                  {{--   @foreach ( $detallesPelicula['credits']['cast'] as $cast )
-                    @if ($loop->index < 5)
-                            <div class="mt-8">
-                                <a href="#">
-                                    <img src="{{'https://image.tmdb.org/t/p/w500/'.$cast['profile_path']}}"alt="" class="transition duration-150 ease-in-out hover:opacity-70">
-                                </a>
-                            
-                                <div class="mt-2">
-                                    <a href="#" class="mt-2 text-lg hover:text-gray-300">{{$cast['name']}}</a>
-                                    <div class="flex items-center text-sm text-gray-300">
-                                        <span>{{$cast['character']}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach --}}
-                            
-            </div>
+            <h2 class="mb-4 text-4xl font-semibold">Reseñas</h2>
+            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<div class="h-auto sliderAx">
+    
+    <div id="slider-1" class="container mx-auto">
+        
+        <div class="object-fill h-auto px-10 py-12 text-white bg-center bg-cover" >
+            @foreach ($reseñas as $reseña)
+                <div class="">
+                    <p class="mb-1 text-3xl text-center text-gray-300" ><i class="fa fa-quote-left"></i> {{$reseña['resena']}}   <i class="fa fa-quote-right"></i></p>
+                    <p class="mb-2 text-sm font-bold text-center text-gray-400 ">{{$reseña['user_id']}}</p>
+                    <p class="text-2xl text-center text-gray-300 client-review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </p>
+                </div>  
             
+       
+    </div> <!-- container -->
+      <br>
+      </div>
+      
+    </div>
+    <div  class="flex justify-between w-12 pb-2 mx-auto">
+        <button id="sButton1" onclick="sliderButton1()" class="w-4 pb-2 bg-orange-400 border-none rounded-full" ></button>
+        {{-- <button id="sButton2" onclick="sliderButton2() " class="w-4 p-2 bg-orange-400 border-none rounded-full "></button> --}}
+    </div>
+    @endforeach
         </div>
     </div>
 
@@ -239,6 +188,7 @@
 {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 <script src="{{ asset('../js/login.js') }}"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/0e637fdd52.js" crossorigin="anonymous"></script>
 <script>
    /* const for = document.querySelector('#message'); */
    const formulario = document.querySelector('#send_message');
@@ -290,4 +240,82 @@
                                 }
                             })      
             });
+
+
+
+    var cont=0;
+function loopSlider(){
+  var xx= setInterval(function(){
+        switch(cont)
+        {
+        case 0:{
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-orange-600");
+            $("#sButton2").addClass("bg-orange-600");
+        cont=1;
+        
+        break;
+        }
+        case 1:
+        {
+        
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-orange-600");
+            $("#sButton1").addClass("bg-orange-600");
+           
+        cont=0;
+        
+        break;
+        }
+        
+        
+        }},8000);
+
+}
+
+function reinitLoop(time){
+clearInterval(xx);
+setTimeout(loopSlider(),time);
+}
+
+
+
+function sliderButton1(){
+
+    $("#slider-2").fadeOut(400);
+    $("#slider-1").delay(400).fadeIn(400);
+    $("#sButton2").removeClass("bg-orange-600");
+    $("#sButton1").addClass("bg-orange-600");
+    reinitLoop(4000);
+    cont=0
+    
+    }
+    
+    function sliderButton2(){
+    $("#slider-1").fadeOut(400);
+    $("#slider-2").delay(400).fadeIn(400);
+    $("#sButton1").removeClass("bg-orange-600");
+    $("#sButton2").addClass("bg-orange-600");
+    reinitLoop(4000);
+    cont=1
+    
+    }
+
+    $(window).ready(function(){
+        $("#slider-2").hide();
+        $("#sButton1").addClass("bg-orange-600");
+        
+
+        loopSlider();
+     
+        
+    
+    
+    
+    
+    });
+
+  
 </script>
