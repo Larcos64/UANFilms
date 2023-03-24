@@ -110,24 +110,24 @@
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
              <!-- Item 1 -->
-            <div class="duration-700 ease-in-out" data-carousel-item>
-                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+        {{--     <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> 
                 <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
 
-            </div>
+            </div> --}}
 
-            <div class="duration-700 ease-in-out" data-carousel-item>
-                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+            {{-- <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> 
                 <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
 
-            </div>
-            <div class="duration-700 ease-in-out" data-carousel-item>
-                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> --}}
+            </div> --}}
+            {{-- <div class="duration-700 ease-in-out" data-carousel-item>
+                {{-- <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> 
                 <img src="{{'https://image.tmdb.org/t/p/w500/'.$detallesPelicula['poster_path']}}" alt="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="width: 24rem" >
 
-            </div>
+            </div> --}}
 
-            {{-- @foreach ($reseñas as $reseña)
+             @foreach ($reseñas as $reseña)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <p class="mb-1 text-3xl text-center text-gray-300" ><i class="fa fa-quote-left"></i> {{$reseña['resena']}}   <i class="fa fa-quote-right"></i></p>
                     <p class="mb-2 text-sm font-bold text-center text-gray-400 ">{{$reseña['user_id']}}</p>
@@ -139,11 +139,11 @@
                         <i class="far fa-star"></i>
                     </p>
                 </div>
-            @endforeach --}}
+            @endforeach 
         </div>
         <!-- Slider indicators -->
-        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        {{-- <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button {{-- type="button"  class="w-4 pb-2 bg-orange-400 border-none rounded-full"{{--  aria-current="true"  aria-label="Slide 1" data-carousel-slide-to="0"></button>
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
 
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
@@ -160,7 +160,7 @@
                 <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 <span class="sr-only">Next</span>
             </span>
-        </button>
+        </button> --}}
     </div>
     
 
@@ -247,10 +247,11 @@
 <script src="{{ asset('../js/login.js') }}"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/0e637fdd52.js" crossorigin="anonymous"></script>
-<script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+<script>
+    
    /* const for = document.querySelector('#message'); */
    const formulario = document.querySelector('#send_message');
     
